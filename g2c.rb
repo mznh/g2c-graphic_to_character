@@ -2,24 +2,28 @@
 # encoding:utf-8
 
 require 'rubygems'
+require 'optparse'
 require 'RMagick'
 require 'curses'
 include Magick
 
+opt = OptionParser.new
+@filename = nil
+@size = nil
+opt.on("-o NAME") { |v| @filename = v }
+opt.on("-s SIZE") { |s| @size=s.to_i }
+opt.parse!(ARGV)
 img = ImageList.new("#{ARGV[0]}")
 Curses.init_screen
 colnum=Curses.cols.to_s
 Curses.close_screen
-if ARGV[1]==nil then 
-  ARGV[1]=colnum
+if @size==nil then 
+  @size=colnum.to_i
 end
-if ARGV[2]==nil then 
-  filename="g2cout"
-else
-  filename=ARGV[2]
+unless @filename==nil then 
+  outfile=File::open(@filename,'w')
 end
-outfile=File::open(filename,'w')
-mimg = img.resize(ARGV[1].to_i,(img.rows*ARGV[1].to_f/img.columns)*0.9)
+mimg = img.resize(@size,(img.rows*@size.to_f/img.columns)*0.9)
 text=""
 for y in 0...mimg.rows/2
   for x in 0...mimg.columns
@@ -37,5 +41,9 @@ for y in 0...mimg.rows/2
   end
   text+="\e[39m\e[49m\e[0m\n"
 end
-outfile.print text
-outfile.close
+unless @filename==nil then 
+  outfile.print text
+  outfile.close
+else
+  print text 
+end
