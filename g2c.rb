@@ -13,12 +13,12 @@ Curses.close_screen
 if ARGV[1]==nil then 
   ARGV[1]=colnum
 end
-if ARGV[2]=nil then 
+if ARGV[2]==nil then 
   filename="g2cout"
-else 
+else
   filename=ARGV[2]
 end
-outfile=File.open(filename,'w')
+outfile=File::open(filename,'w')
 mimg = img.resize(ARGV[1].to_i,(img.rows*ARGV[1].to_f/img.columns)*0.9)
 text=""
 for y in 0...mimg.rows/2
