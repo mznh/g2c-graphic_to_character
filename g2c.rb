@@ -10,13 +10,15 @@ img = ImageList.new("#{ARGV[0]}")
 Curses.init_screen
 colnum=Curses.cols.to_s
 Curses.close_screen
-p ARGV[0]
-p img.columns
-#mimg = img.resize(160,96)
 if ARGV[1]==nil then 
   ARGV[1]=colnum
 end
-p ARGV[1]
+if ARGV[2]=nil then 
+  filename="g2cout"
+else 
+  filename=ARGV[2]
+end
+outfile=File.open(filename,'w')
 mimg = img.resize(ARGV[1].to_i,(img.rows*ARGV[1].to_f/img.columns)*0.9)
 text=""
 for y in 0...mimg.rows/2
@@ -35,4 +37,5 @@ for y in 0...mimg.rows/2
   end
   text+="\e[39m\e[49m\e[0m\n"
 end
-print text
+outfile.print text
+outfile.close
