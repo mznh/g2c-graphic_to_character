@@ -6,7 +6,6 @@ require 'optparse'
 require 'RMagick'
 require 'curses'
 include Magick
-
 opt = OptionParser.new
 @filename = nil
 @size = nil

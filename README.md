@@ -1,6 +1,5 @@
 g2c-graphic_to_character
 ========================
-# g2c-graphic_to_character
 
 ## 概要
 
@@ -14,7 +13,7 @@ g2c-graphic_to_character
  * optperse
  * curses
  
- ## 使い方
+## 使い方
  
  g2c.rb 画像ファイル -o 出力ファイル名 -s　出力するテキストファイルの横幅
  
