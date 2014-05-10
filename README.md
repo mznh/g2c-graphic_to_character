@@ -9,7 +9,7 @@ g2c-graphic_to_character
 
 ## 要るgem
 
- * ImageMagick
+ * RMagick
  * optperse
  * curses
  
