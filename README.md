@@ -5,16 +5,16 @@ g2c-graphic_to_character
 
 画像を読み込んで256色ターミナルで標示できるようなテキストファイルを生成するスクリプトです。
 
-素朴な実装です。
-
-## 要るgem
-
- * RMagick
- * optperse
- * curses
+## 導入
+	
+	``$ git clone git@github.com:mznh/g2c-graphic_to_character.git``
+	``$ apt-get install imagemagick``
+	``$ gem install rmagick``
  
 ## 使い方
  
-        g2c.rb 画像ファイル -o 出力ファイル名 -s　出力するテキストファイルの横幅
+        $ ruby g2c.rb 画像ファイル -o 出力ファイル名 -s　出力するテキストファイルの横幅
  
- -sは指定しないと自動的に現在のターミナルの横幅になります。
+ -oは指定しないと標準出力されます。（これをリダイレクト等するとCursesのゴミが入る可能性があります。
+
+ -sは指定しないと現在のターミナルの横幅になります。
