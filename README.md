@@ -7,9 +7,11 @@ g2c-graphic_to_character
 
 ## 導入
 	
-	``$ git clone git@github.com:mznh/g2c-graphic_to_character.git``
-	``$ apt-get install imagemagick``
-	``$ gem install rmagick``
+``$ git clone git@github.com:mznh/g2c-graphic_to_character.git``
+
+``$ apt-get install imagemagick``
+
+``$ gem install rmagick``
  
 ## 使い方
  
