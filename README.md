@@ -19,7 +19,9 @@ g2c-graphic_to_character
 ``$ apt-get install imagemagick``
 
 ``$ gem install rmagick``
- 
+
+ちっちゃいスクリプトだしgemとかruby本体とかのバージョン管理とかいらんやろ（適当）
+
 ## 使い方
  
         $ ruby g2c.rb 画像ファイル -o 出力ファイル名 -s　出力するテキストファイルの横幅
