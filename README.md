@@ -18,7 +18,7 @@ g2c-graphic_to_character
 
 ``$ apt-get install imagemagick``
 
-``$ gem install rmagick``
+``$ gem install mini_magick curses``
 
 ちっちゃいスクリプトだしgemとかruby本体とかのバージョン管理とかいらんやろ（適当）
 
