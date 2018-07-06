@@ -6,7 +6,7 @@ g2c-graphic_to_character
 画像を読み込んで256色ターミナルで標示できるようなテキストファイルを生成するスクリプトです。
 
 これが
-![before](./g2cbfo.jpg)
+![before](./g2cbfo.jpg =200x)
 
 こうなります。（フォントによっては崩れるかも）
 
